@@ -1,4 +1,4 @@
-#pragma once//Аненков О.А.
+#pragma once//РђРЅРµРЅРєРѕРІ Рћ.Рђ.
 #include<stdio.h>
 
 void Menu_Combinatorica();
