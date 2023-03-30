@@ -359,7 +359,7 @@ void AdditionMatrixWithNumber() {
 void MatrixTranposition() {
 	int N, M;
 	while (true) {
-		cout << "Введите размер первой матрицы (Числа больше 0 и меньше 11)" << endl;
+		cout << "Введите размер матрицы (Числа больше 0 и меньше 11)" << endl;
 		cout << "Число строк =  "; cin >> N; cout << "Число столбцов = "; cin >> M;
 		if ((N < 1 && N > 10) || (M < 1 && M > 10)) {
 			cout << "Вы ввели неверное значение, попробуйте снова!" << endl;
@@ -397,47 +397,103 @@ void MatrixTranposition() {
 }
 
 void InverseMatrix() {
-	int size;
-	while (true) {
-		cout << "Введите размерность матрицы (Не более 5): "; cin >> size;
-		if (size < 1 && size > 5)
-			cout << "Вы ввели неверное значение, попробуйте снова" << endl;
-		else
-			break;
-	}
-	int** Matrix = new int* [size];
-	int count = 0;
-	for (int i = 0;i < size;i++)
-		Matrix[i] = new int[size];
-	for (int i = 0; i < size;i++)
-		for (int j = 0; j < size;j++) {
-			count++; cout << "Введите элемент №" << count << " : "; cin >> Matrix[i][j];
+	int N;
+
+	cout << "Введите размер матрицы (Не больше 5): ";
+	cin >> N;
+
+	double** matrix = new double* [N];
+
+	for (int i = 0; i < N; i++)
+		matrix[i] = new double[N];
+	int count = 1;
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+		{
+			cout << "Введите элемент №" << count << ": ";
+			count++;
+			cin >> matrix[i][j];
 		}
-	cout << "Введенная матрица: " << endl;
-	for (int i = 0; i < size;i++) {
-		for (int j = 0; j < size;j++)
-			cout << Matrix[i][j] << "\t";
-		cout << "\n";
+
+	double temp;
+
+	double** E = new double* [N];
+
+	for (int i = 0; i < N; i++)
+		E[i] = new double[N];
+
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+		{
+			E[i][j] = 0.0;
+
+			if (i == j)
+				E[i][j] = 1.0;
+		}
+
+	for (int k = 0; k < N; k++)
+	{
+		temp = matrix[k][k];
+
+		for (int j = 0; j < N; j++)
+		{
+			matrix[k][j] /= temp;
+			E[k][j] /= temp;
+		}
+
+		for (int i = k + 1; i < N; i++)
+		{
+			temp = matrix[i][k];
+
+			for (int j = 0; j < N; j++)
+			{
+				matrix[i][j] -= matrix[k][j] * temp;
+				E[i][j] -= E[k][j] * temp;
+			}
+		}
 	}
-	cout << "Определитель матрицы = " << Function_Determinant(Matrix, size) << endl;
-	int Det = Function_Determinant(Matrix, size);
-	if (Det == 0) {
-		cout << "Матрица является вырожденной (определитель = 0) => не имеет обратной" << endl; return;
+
+	for (int k = N - 1; k > 0; k--)
+	{
+		for (int i = k - 1; i >= 0; i--)
+		{
+			temp = matrix[i][k];
+
+			for (int j = 0; j < N; j++)
+			{
+				matrix[i][j] -= matrix[k][j] * temp;
+				E[i][j] -= E[k][j] * temp;
+			}
+		}
 	}
-	//Транспонирование
-	int** NewMatrix = new int* [size];
-	for (int i = 0; i < size;i++)
-		NewMatrix[i] = new int[size];
-	for (int i = 0; i < size;i++) {
-		for (int j = 0; j < size;j++)
-			NewMatrix[i][j] = Matrix[j][i];
+
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+			matrix[i][j] = E[i][j];
+
+	for (int i = 0; i < N; i++)
+		delete[] E[i];
+
+	delete[] E;
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++) {
+			if ((int(matrix[i][j]) > -9999999) && (int(matrix[i][j] < 9999999))) {
+				cout << matrix[i][j] << " \t";
+			}
+			else {
+				cout << "Данная матрица не имеет обратной!" << endl; return;
+			}
+		}
+		cout << "\n"<<endl;
 	}
-	cout << "Результат транспонирования: " << endl;
-	for (int i = 0; i < size;i++) {
-		for (int j = 0; j < size;j++)
-			cout << NewMatrix[i][j] << "\t";
-		cout << "\n";
-	}
+
+	for (int i = 0; i < N; i++)
+		delete[] matrix[i];
+
+	delete[] matrix;
+
 }
 
 void DetMatrix() {
