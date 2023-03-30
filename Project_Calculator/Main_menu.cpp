@@ -5,8 +5,8 @@
 
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
 	int again = 1, choose;
 	do
 	{
