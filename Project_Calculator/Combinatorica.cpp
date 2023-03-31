@@ -7,7 +7,7 @@ void Menu_Combinatorica()
 {
 	do
 	{
-		printf("Введите 0, чтобы вернуться в главное меню");
+		printf("Введите 0, чтобы вернуться в главное меню\n");
 		printf("Выберете номер действия, которое вы хотите выполнить:\n");
 		printf("1) Размещение с повторением\n");
 		printf("2) Размещение без повторений\n");
@@ -54,6 +54,7 @@ void razm_povt()
 		A*=n;
 	}
 	printf("Число размещений с повторениями равно: %d\n", A);
+	A = 0;
 }
 
 void razm_no_povt()
@@ -80,6 +81,7 @@ void razm_no_povt()
 	}
 	A = fact_n / fact_n_m;
 	printf("Число размещений без повторений равно: %d\n", A);
+	A = 0;
 }
 
 void soch_povt()
@@ -111,6 +113,7 @@ void soch_povt()
 	}
 	C = fact_n_m_1/(fact_m*fact_n_1);
 	printf("Число сочетаний с повторениями равно: %d\n", C);
+	C = 0;
 }
 
 void soch_no_povt()
@@ -142,6 +145,7 @@ void soch_no_povt()
 	}
 	C = fact_n/(fact_m*fact_n_m);
 	printf("Число сочетаний без повторений равно: %d\n", C);
+	C = 0;
 }
 
 void perestanovki()
@@ -161,4 +165,5 @@ void perestanovki()
 	}
 	P = fact_n;
 	printf("Число перестановок равно: %d\n", P);
+	P = 0;
 }

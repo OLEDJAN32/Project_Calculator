@@ -1,4 +1,5 @@
 #include "HeaderSDL.h"
+#include <Windows.h>
 const int SCREEN_WIDTH = 600;
 const int SCREEN_HEIGHT = 600;
 SDL_Window* window = NULL;
@@ -164,8 +165,112 @@ void Logf() {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
+void sinusoid() {
+	double a, b, c;
+	int d;
+	cout << "Введите коэффиценты (b>0)" << endl;
+	cout << "a = "; cin >> a;
+	cout << "b = "; cin >> b;
+	cout << "c = "; cin >> c;
+	cout << "d = "; cin >> d;
+	double y;
+	if (!(init())) printf("Ошибка инициализации окна\n");
+	else {
+		SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
+		SDL_RenderClear(renderer);
+		FuncSetka(renderer);
+
+
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
+		for (double x = -1000; x < 1000; x += 0.01) {
+			y = a * (sin(b * x + c));
+			SDL_RenderDrawPoint(renderer, 300 + x, ((300 + y) - (d * 20)));
+		}
+		SDL_RenderPresent(renderer);
+		SDL_Delay(7000);
+		SDL_DestroyRenderer(renderer);
+
+
+	}
+	SDL_DestroyWindow(window);
+	SDL_Quit();
+}
+
+void cosinusoid() {
+	double a, b, c;
+	int d;
+	cout << "Введите коэффиценты (b>0)" << endl;
+	cout << "a = "; cin >> a;
+	cout << "b = "; cin >> b;
+	cout << "c = "; cin >> c;
+	cout << "d = "; cin >> d;
+	double y;
+	if (!(init())) printf("Ошибка инициализации окна\n");
+	else {
+		SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
+		SDL_RenderClear(renderer);
+		FuncSetka(renderer);
+
+
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
+		for (double x = -1000; x < 1000; x += 0.01) {
+			y = a * (cos(b * x + c));
+			SDL_RenderDrawPoint(renderer, 300 + x, ((300 + y) - (d * 20)));
+		}
+		SDL_RenderPresent(renderer);
+		SDL_Delay(7000);
+		SDL_DestroyRenderer(renderer);
+
+
+	}
+	SDL_DestroyWindow(window);
+	SDL_Quit();
+}
+
+void polynom() {
+	int n;
+	double arr[100];
+	cout << "Введите степень: ";
+	cin >> n;
+	if (n <= 0) {
+		cout << "Степень должна быть больше 0.";
+		return;
+	}
+	for (int i = 0; i <= n; i++) {
+		cout << "Введите коэффицент, начиная с нулевой степени" << i + 1 << " многочлена: ";
+		cin >> arr[i];
+	}
+	double y = 0;
+	if (!(init())) printf("Ошибка инициализации окна\n");
+	else {
+		SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
+		SDL_RenderClear(renderer);
+		FuncSetka(renderer);
+
+
+		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
+		for (double x = -40; x < 40; x += 0.001) {
+			y = 0;
+			for (int i = 0; i <= n; i++) {
+				y += arr[i] * (pow(x, i));
+			}
+			SDL_RenderDrawPoint(renderer, 300 + x * 20, 300 + -y * 20);
+		}
+		SDL_RenderPresent(renderer);
+		SDL_Delay(7000);
+		SDL_DestroyRenderer(renderer);
+
+
+	}
+	SDL_DestroyWindow(window);
+	SDL_Quit();
+}
 void ChooseFunctionSDL() {
-	setlocale(LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	int check; bool flag = true;
 	do {
 		cout << "Выберите тип графика функции" << endl;
@@ -179,6 +284,8 @@ void ChooseFunctionSDL() {
 		cout << "Ввод: "; cin >> check;
 		switch (check) {
 		case 0:
+			SetConsoleCP(65001);
+			SetConsoleOutputCP(65001);
 			flag = false; break;
 		case 1:
 			Stepen(); break;
@@ -187,11 +294,11 @@ void ChooseFunctionSDL() {
 		case 3:
 			Logf(); break;
 		case 4:
-			cout << endl;
+			sinusoid();
 		case 5:
-			cout << endl;
+			cosinusoid();
 		case 6:
-			cout << endl;
+			polynom();
 
 		}
 	} while (flag == true);

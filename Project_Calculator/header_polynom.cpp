@@ -115,7 +115,7 @@ void inputPolynomials(arr_val new_arr[100], int& k) {
 
 void derivPolynomials(arr_val new_arr1[100], int x1) {
 	for (int i = 0; i < x1; i++) {
-		if (new_arr1[i].degree == 0) new_arr1[i].kof == 0;
+		if (new_arr1[i].degree == 0) new_arr1[i].kof = 0;
 		new_arr1[i].kof *= new_arr1[i].degree;
 		new_arr1[i].degree--;
 	}

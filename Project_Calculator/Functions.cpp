@@ -1,5 +1,6 @@
 #include "Header_Functions.h"
 #include "HeaderSDL.h"
+#include "KorenY.h"
 
 void Menu_Functions() {
 	
@@ -19,7 +20,7 @@ void Menu_Functions() {
 		case 2:
 			ChooseFunctionSDL(); break;
 		case 3:
-			cout << endl; break;
+			ChooseFunctionKoren(); break;
 		case 4:
 			cout << endl; break;
 		case 0:

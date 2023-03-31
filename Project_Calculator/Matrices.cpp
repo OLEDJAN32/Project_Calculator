@@ -50,7 +50,7 @@ void AdditionMatrix() {
 	while (true) {
 		cout << "Введите размер первой матрицы (Числа больше 0 и меньше 11)" << endl;
 		cout << "Число строк =  "; cin >> N1; cout << "Число столбцов = "; cin >> M1;
-		if ((N1 < 1 && N1 > 10) || (M1 < 1 && M1 > 10)) {
+		if ((N1 < 1 || N1 > 10) || (M1 < 1  || M1 > 10)) {
 			cout << "Вы ввели неверное значение, попробуйте снова!" << endl;
 		}
 		else
@@ -118,7 +118,7 @@ void SubtractionMatrix() {
 	while (true) {
 		cout << "Введите размер первой матрицы (Числа больше 0 и меньше 11)" << endl;
 		cout << "Число строк = "; cin >> N1; cout << "Число столбцов = "; cin >> M1;
-		if ((N1 < 1 && N1 > 10) || (M1 < 1 && M1 > 10)) {
+		if ((N1 < 1 || N1 > 10) || (M1 < 1 || M1 > 10)) {
 			cout << "Вы ввели неверное значение, попробуйте снова!" << endl;
 		}
 		else
@@ -185,7 +185,7 @@ void MultiplicationMatrix() {
 	while (true) {
 		cout << "Введите размер первой матрицы (Числа больше 0 и не более 10)" << endl;
 		cout << "Число строк =  "; cin >> N1; cout << "Число столбцов = "; cin >> M1;
-		if ((N1 < 1 && N1 > 10) || (M1 < 1 && M1 > 10)) {
+		if ((N1 < 1 || N1 > 10) || (M1 < 1 || M1 > 10)) {
 			cout << "Вы ввели неверное значение, попробуйте снова!" << endl;
 		}
 		else
@@ -215,7 +215,7 @@ void MultiplicationMatrix() {
 	while (true) {
 		cout << "Введите число строк: "; cin >> N2;
 		cout << "Введите число столбцов: "; cin >> M2;
-		if ((M1 != N2) || ((N2 < 1 && N2 > 10) || (M2 < 1 && M2 > 10))) {
+		if ((M1 != N2) || ((N2 < 1 || N2 > 10) || (M2 < 1 || M2 > 10))) {
 			cout << "Вы ввели неверные значения, попробуйте снова!" << endl;
 		}
 		else
@@ -270,7 +270,7 @@ void MultiplicationMatrixOnNumber() {
 	while (true) {
 		cout << "Введите размер первой матрицы (Числа больше 0 и меньше 11)" << endl;
 		cout << "Число строк =  "; cin >> N; cout << "Число столбцов = "; cin >> M;
-		if ((N < 1 && N > 10) || (M < 1 && M > 10)) {
+		if ((N < 1 || N > 10) || (M < 1 || M > 10)) {
 			cout << "Вы ввели неверное значение, попробуйте снова!" << endl;
 		}
 		else
@@ -295,7 +295,7 @@ void MultiplicationMatrixOnNumber() {
 	}
 	cout << endl;
 	int Number;
-	cout << "Введите целое число, на которое хотелм бы умножить заданную матрицу" << endl;
+	cout << "Введите целое число, на которое хотели бы умножить заданную матрицу" << endl;
 	cout << "Ввод: "; cin >> Number;
 	cout << "Полученная матрица: " << endl;
 	for (int i = 0;i < N;i++)
@@ -313,7 +313,7 @@ void AdditionMatrixWithNumber() {
 	int size;
 	while (true) {
 		cout << "Введите размерность матрицы (Не более 5): "; cin >> size;
-		if (size < 1 && size > 5)
+		if (size < 1 || size > 5)
 			cout << "Вы ввели неверное значение, попробуйте снова" << endl;
 		else
 			break;
@@ -343,9 +343,9 @@ void AdditionMatrixWithNumber() {
 		cout << "Ввод: "; cin >> check;
 		switch (check) {
 		case 1:
-			cout << "Результат сложения: " << Function_Determinant(Matrix, size) + Number << endl; break;
+			cout << "Результат сложения: " << Function_Determinant(Matrix, size) + Number << endl; return;
 		case 2:
-			cout << "Результат вычитания: " << Function_Determinant(Matrix, size) - Number << endl; break;
+			cout << "Результат вычитания: " << Function_Determinant(Matrix, size) - Number << endl; return;
 		default:
 			cout << "Вы сделали что-то не так, попробуйте снова" << endl;
 		}
@@ -361,7 +361,7 @@ void MatrixTranposition() {
 	while (true) {
 		cout << "Введите размер матрицы (Числа больше 0 и меньше 11)" << endl;
 		cout << "Число строк =  "; cin >> N; cout << "Число столбцов = "; cin >> M;
-		if ((N < 1 && N > 10) || (M < 1 && M > 10)) {
+		if ((N < 1 || N > 10) || (M < 1 || M > 10)) {
 			cout << "Вы ввели неверное значение, попробуйте снова!" << endl;
 		}
 		else
@@ -533,7 +533,7 @@ void Menu_Matrix() {
 		cout << "Введите 4 для умножения матрицы на число" << endl;//done
 		cout << "Введите 5 для сложения или вычитания числа из матрицы" << endl;//done
 		cout << "Введите 6 для транспонирования матрицы" << endl; //done
-		cout << "Введите 7 для нахождения обратной матрицы вида NxN" << endl;//to do
+		cout << "Введите 7 для нахождения обратной матрицы вида NxN" << endl;//done
 		cout << "Введите 8 для нахождения определителя матрицы размерности N" << endl; //done
 		cout << endl;
 		cout << "Введите 0 для возврата в главное меню программы" << endl;

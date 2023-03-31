@@ -131,6 +131,7 @@
     <ClCompile Include="Drobi_Lagutin.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="header_polynom.cpp" />
+    <ClCompile Include="KorenY.cpp" />
     <ClCompile Include="Main_menu.cpp">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsCpp</CompileAs>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
@@ -146,6 +147,7 @@
     <ClInclude Include="Header_Combinatorica.h" />
     <ClInclude Include="Header_Functions.h" />
     <ClInclude Include="header_polynom_main.h" />
+    <ClInclude Include="KorenY.h" />
     <ClInclude Include="Veroyatn.h" />
   </ItemGroup>
   <ItemGroup>
