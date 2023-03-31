@@ -4,11 +4,9 @@
 #include "HeaderIntegral.h"
 
 void Menu_Functions() {
-	
-	//setlocale(LC_ALL, "rus");
 	int check; bool flag = true;
 	do {
-		cout << " 0) Чтобы перейти в главное меню калькулятора" << endl;
+		cout << "0) Чтобы перейти в главное меню калькулятора" << endl;
 		cout << "Выберите действие над функцией" << endl;
 		cout << "1) для вычисления определенного интеграла на отрезке" << endl;
 		cout << "2) для построения графика функции " << endl;
@@ -32,5 +30,4 @@ void Menu_Functions() {
 		
 
 	} while (flag == true);
-	//return;
 }

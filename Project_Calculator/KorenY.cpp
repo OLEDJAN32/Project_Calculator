@@ -25,9 +25,15 @@ void StepenKoren() {
 		return;
 	}
 	int a1, b1;
-	cout << " ак введите отрезок, на котором будет происходить поиск корней"<<endl;
-	cout << "¬ведите a: "; cin >> a1;
-	cout << "¬ведите b :"; cin >> b1;
+	while (true) {
+		cout << "¬ведите отрезок, на котором будет происходить поиск корней" << endl;
+		cout << "¬ведите a: "; cin >> a1;
+		cout << "¬ведите b: "; cin >> b1;
+		if (a1 >= b1)
+			cout << "b должен быть больше, чем а" << endl;
+		else
+			break;
+	}
 	res = DihStepen(a, b, c, a1, b1);
 	cout << res << endl;
 	}
@@ -56,9 +62,15 @@ void StepenPokaz() {
 		return;
 	}
 	int a1, b1;
-	cout << " ак введите отрезок, на котором будет происходить поиск корней" << endl;
-	cout << "¬ведите a: "; cin >> a1;
-	cout << "¬ведите b :"; cin >> b1;
+	while (true) {
+		cout << "¬ведите отрезок, на котором будет происходить поиск корней" << endl;
+		cout << "¬ведите a: "; cin >> a1;
+		cout << "¬ведите b: "; cin >> b1;
+		if (a1 >= b1)
+			cout << "b должен быть больше, чем а" << endl;
+		else
+			break;
+	}
 	res = DihPokaz(a, b, c, d,a1, b1);
 	cout << res << endl;
 }
@@ -86,9 +98,15 @@ void Log() {
 		return;
 	}
 	int a1, b1;
-	cout << " ак введите отрезок, на котором будет происходить поиск корней" << endl;
-	cout << "¬ведите a: "; cin >> a1;
-	cout << "¬ведите b :"; cin >> b1;
+	while (true) {
+		cout << "¬ведите отрезок, на котором будет происходить поиск корней" << endl;
+		cout << "¬ведите a: "; cin >> a1;
+		cout << "¬ведите b: "; cin >> b1;
+		if (a1 >= b1)
+			cout << "b должен быть больше, чем а" << endl;
+		else
+			break;
+	}
 	res = DihLog(a, b, c, a1, b1);
 	cout << res << endl;
 }
@@ -117,9 +135,15 @@ void Sinus() {
 		return;
 	}
 	int a1, b1;
-	cout << " ак введите отрезок, на котором будет происходить поиск корней" << endl;
-	cout << "¬ведите a: "; cin >> a1;
-	cout << "¬ведите b :"; cin >> b1;
+	while (true) {
+		cout << "¬ведите отрезок, на котором будет происходить поиск корней" << endl;
+		cout << "¬ведите a: "; cin >> a1;
+		cout << "¬ведите b: "; cin >> b1;
+		if (a1 >= b1)
+			cout << "b должен быть больше, чем а" << endl;
+		else
+			break;
+	}
 	res = DihSinus(a, b, c, d, a1, b1);
 	cout << res << endl;
 }
@@ -148,9 +172,15 @@ void Cosinus() {
 		return;
 	}
 	int a1, b1;
-	cout << " ак введите отрезок, на котором будет происходить поиск корней" << endl;
-	cout << "¬ведите a: "; cin >> a1;
-	cout << "¬ведите b :"; cin >> b1;
+	while (true) {
+		cout << "¬ведите отрезок, на котором будет происходить поиск корней" << endl;
+		cout << "¬ведите a: "; cin >> a1;
+		cout << "¬ведите b: "; cin >> b1;
+		if (a1 >= b1)
+			cout << "b должен быть больше, чем а" << endl;
+		else
+			break;
+	}
 	res = DihCosinus(a, b, c, d, a1, b1);
 	cout << res << endl;
 }
@@ -186,9 +216,15 @@ void Polynom() {
 		cin >> arr[i];
 	}
 	int a1, b1;
-	cout << "¬ведите отрезок, на котором будет происходить поиск корней" << endl;
-	cout << "¬ведите a: "; cin >> a1;
-	cout << "¬ведите b: "; cin >> b1;
+	while (true) {
+		cout << "¬ведите отрезок, на котором будет происходить поиск корней" << endl;
+		cout << "¬ведите a: "; cin >> a1;
+		cout << "¬ведите b: "; cin >> b1;
+		if (a1 >= b1)
+			cout << "b должен быть больше, чем а" << endl;
+		else
+			break;
+	}
 	res = DihPolynom(n, arr, a1, b1);
 	cout << res << endl;
 }
