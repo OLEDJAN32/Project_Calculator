@@ -135,11 +135,15 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Matrices.cpp" />
+    <ClCompile Include="SDL.cpp" />
+    <ClCompile Include="Veroy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderMatrices.h" />
+    <ClInclude Include="HeaderSDL.h" />
     <ClInclude Include="Header_Combinatorica.h" />
     <ClInclude Include="Header_Functions.h" />
+    <ClInclude Include="Veroyatn.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
