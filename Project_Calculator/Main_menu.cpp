@@ -6,6 +6,7 @@
 #include "SDL.h"
 #include "Veroyatn.h"
 #include "header_polynom_main.h"
+#include "Drobi_Lagutin.h"
 using namespace std;
 
 int main(int argc, char**argv)
@@ -42,10 +43,11 @@ int main(int argc, char**argv)
 			Menu_Veroiatnost(); break;
 		case 5:
 			Menu_Functions(); break;
+		case 6: Menu_Drobi(); break;
 		case 0:
 			again = 0;
 		}
-		//case 6: Menu_Drobi(); break;
+		
 		
 
 		

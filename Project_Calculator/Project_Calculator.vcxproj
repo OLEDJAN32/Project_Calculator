@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Combinatorica.cpp" />
+    <ClCompile Include="Drobi_Lagutin.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="header_polynom.cpp" />
     <ClCompile Include="Main_menu.cpp">
@@ -139,6 +140,7 @@
     <ClCompile Include="Veroy.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Drobi_Lagutin.h" />
     <ClInclude Include="HeaderMatrices.h" />
     <ClInclude Include="HeaderSDL.h" />
     <ClInclude Include="Header_Combinatorica.h" />

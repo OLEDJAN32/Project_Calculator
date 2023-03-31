@@ -48,7 +48,7 @@ void FuncSetka(SDL_Renderer* renderer) {
 			SDL_RenderDrawPoint(renderer, x, y);
 }
 void Stepen() {
-	int a, b, c;
+	double a, b, c;
 	cout << "¬ведите коэффиценты" << endl;
 	cout << "a = "; cin >> a;
 	cout << "b = "; cin >> b;
@@ -125,7 +125,7 @@ void Pocazat() {
 	SDL_Quit();
 }
 void Logf() {
-	int a, b, c;
+	double a, b, c;
 	while (true) {
 		cout << "¬ведите коэффиценты (b>0)" << endl;
 		cout << "a = "; cin >> a;
