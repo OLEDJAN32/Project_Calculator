@@ -1,10 +1,9 @@
 #include "Header_Functions.h"
-#include "HeaderSDL.h"
 
 
 void Menu_Functions() {
 	
-	//setlocale(LC_ALL, "rus");
+	setlocale(LC_ALL, "rus");
 	int check; bool flag = true;
 	do {
 		cout << "Введите 0, чтобы перейти в главное меню калькулятора" << endl;
@@ -16,20 +15,16 @@ void Menu_Functions() {
 		cout << "Ввод: "; cin >> check;
 		switch (check) {
 		case 1:
-			cout << endl; break;
+			cout << endl;
 		case 2:
-			ChooseFunctionSDL(); break;
+			cout << endl;
 		case 3:
-			cout << endl; break;
+			cout << endl;
 		case 4:
-			cout << endl; break;
+			cout << endl;
 		case 0:
 			flag = false; break;
-		default:
-			cout << "Вы ввели неверное значение, попробуйте снова!" << endl;
 		}
-		
-
 	} while (flag == true);
 	//return;
 }

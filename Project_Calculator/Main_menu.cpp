@@ -3,8 +3,6 @@
 #include"Header_Combinatorica.h"
 #include "HeaderMatrices.h"
 #include "Header_Functions.h"
-#include "SDL.h"
-#include "Veroyatn.h"
 
 int main(int argc, char**argv)
 {
