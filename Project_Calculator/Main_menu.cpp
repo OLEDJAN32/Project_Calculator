@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<Windows.h>
 #include"Header_Combinatorica.h"
-#include "HeaderMatrices.h"
-#include "Header_Functions.h"
+#include"HeaderMatrices.h"
+#include"Header_Functions.h"
 
 int main(int argc, char**argv)
 {
@@ -35,8 +35,7 @@ int main(int argc, char**argv)
 		//case 3: Menu_Polynomails(); break;
 		//case 4: 
 		
-		case 5:
-			Menu_Functions(); break;
+		case 5: Menu_Functions(); break;
 		case 0:
 			again = 0;
 		}
