@@ -165,6 +165,7 @@ void Logf() {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
+
 void sinusoid() {
 	double a, b, c;
 	int d;
@@ -238,8 +239,9 @@ void polynom() {
 		cout << "Степень должна быть больше 0.";
 		return;
 	}
+	cout << "Введите коэффицент, начиная с нулевой степени" << endl;
 	for (int i = 0; i <= n; i++) {
-		cout << "Введите коэффицент, начиная с нулевой степени" << i + 1 << " многочлена: ";
+		cout << "Введите коэффицент " << i + 1 << " одночлена: ";
 		cin >> arr[i];
 	}
 	double y = 0;
@@ -268,19 +270,20 @@ void polynom() {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
+
 void ChooseFunctionSDL() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	int check; bool flag = true;
 	do {
 		cout << "Выберите тип графика функции" << endl;
-		cout << "Введите 1 для построения графика степенной функции вида a*x^b+c" << endl;
-		cout << "Введите 2 для построения графика показательной функции вида a*b^(c*x)+d" << endl;
-		cout << "Введите 3 для построения графика логарифмической функции вида a*ln(b*x)+c" << endl;
-		cout << "Введите 4 для построения графика синусоиды a*sin(b*x+c)+d" << endl;
-		cout << "Введите 5 для построения графика Косинусоиды a*cos(b*x+c)+d" << endl;
-		cout << "Введите 6 для построения графика полинома степени N" << endl;
-		cout << "Введите 0, чтобы вернуться на предыдущий этап" << endl;
+		cout << "1) для построения графика степенной функции вида a*x^b+c" << endl;
+		cout << "2) для построения графика показательной функции вида a*b^(c*x)+d" << endl;
+		cout << "3) для построения графика логарифмической функции вида a*ln(b*x)+c" << endl;
+		cout << "4) для построения графика синусоиды a*sin(b*x+c)+d" << endl;
+		cout << "5) для построения графика Косинусоиды a*cos(b*x+c)+d" << endl;
+		cout << "6) для построения графика полинома степени N" << endl;
+		cout << "0), чтобы вернуться на предыдущий этап" << endl;
 		cout << "Ввод: "; cin >> check;
 		switch (check) {
 		case 0:
@@ -294,11 +297,11 @@ void ChooseFunctionSDL() {
 		case 3:
 			Logf(); break;
 		case 4:
-			sinusoid();
+			sinusoid(); break;
 		case 5:
-			cosinusoid();
+			cosinusoid(); break;
 		case 6:
-			polynom();
+			polynom(); break;
 
 		}
 	} while (flag == true);

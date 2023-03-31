@@ -7,6 +7,7 @@
 #include "Veroyatn.h"
 #include "header_polynom_main.h"
 #include "Drobi_Lagutin.h"
+
 using namespace std;
 
 int main(int argc, char**argv)

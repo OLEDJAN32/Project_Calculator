@@ -154,6 +154,44 @@ void Cosinus() {
 	res = DihCosinus(a, b, c, d, a1, b1);
 	cout << res << endl;
 }
+double function6(double C, double arr[100], int n)
+{
+	double y = 0;
+	for (int i = 0; i <= n; i++) {
+		y += arr[i] * (pow(C, i));
+	}
+	return y;
+}
+double DihPolynom(int n, double arr[100], double A, double B) {
+	double C = (A + B) / 2.0;
+	if (function6(C, arr, n) == 0 || (B - A) / 2 < e)
+		return C;
+	if (function6(A, arr, n) * function6(C, arr, n) < 0)
+		return DihPolynom(n, arr, A, C);
+	return DihPolynom(n, arr, C, B);
+}
+void Polynom() {
+	int n;
+	double arr[100];
+	double res;
+	cout << "Введите степень: ";
+	cin >> n;
+	if (n <= 0) {
+		cout << "Степень должна быть больше 0.";
+		return;
+	}
+	cout << "Введите коэффицент, начиная с нулевой степени" << endl;
+	for (int i = 0; i <= n; i++) {
+		cout << "Введите коэффицент " << i + 1 << " одночлена: ";
+		cin >> arr[i];
+	}
+	int a1, b1;
+	cout << "Введите отрезок, на котором будет происходить поиск корней" << endl;
+	cout << "Введите a: "; cin >> a1;
+	cout << "Введите b: "; cin >> b1;
+	res = DihPolynom(n, arr, a1, b1);
+	cout << res << endl;
+}
 void  ChooseFunctionKoren() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
@@ -184,7 +222,7 @@ void  ChooseFunctionKoren() {
 		case 5:
 			Cosinus(); break;
 		case 6:
-			cout << endl;
+			Polynom(); break;
 
 		}
 	} while (flag == true);
