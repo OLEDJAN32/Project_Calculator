@@ -3,7 +3,7 @@
 
 void Menu_Functions() {
 	
-	setlocale(LC_ALL, "rus");
+	//setlocale(LC_ALL, "rus");
 	int check; bool flag = true;
 	do {
 		cout << "Введите 0, чтобы перейти в главное меню калькулятора" << endl;
