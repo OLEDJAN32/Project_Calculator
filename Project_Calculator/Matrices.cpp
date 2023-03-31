@@ -523,7 +523,7 @@ void DetMatrix() {
 }
 
 void Menu_Matrix() {
-	setlocale(LC_ALL, "rus");
+	//setlocale(LC_ALL, "rus");
 	cout << "Калькулятор поддерживает работу только с ЦЕЛЫМИ числами!" << endl << endl;
 	bool flag = true; int check;
 	do {
