@@ -7,6 +7,7 @@ void Menu_Combinatorica()
 {
 	do
 	{
+		printf("Введите 0, чтобы вернуться в главное меню");
 		printf("Выберете номер действия, которое вы хотите выполнить:\n");
 		printf("1) Размещение с повторением\n");
 		printf("2) Размещение без повторений\n");
@@ -15,7 +16,7 @@ void Menu_Combinatorica()
 		printf("5) Перестановки\n\n");
 		printf("Выполнить действие под номером: "); scanf("%d", &choose_comb);
 
-		while ((choose_comb < 1) || (choose_comb > 5))
+		while ((choose_comb < 0) || (choose_comb > 5))
 		{
 			printf("Ошибка, калькулятора под данным номером не существует, выберите калькулятор заново\n");
 			printf("Использовать калькулятор под номером: "); scanf("%d", &choose_comb);
@@ -29,6 +30,8 @@ void Menu_Combinatorica()
 		case 3: soch_povt(); break;
 		case 4: soch_no_povt(); break;
 		case 5: perestanovki(); break;
+		case 0:
+			return;
 		}
 		printf("Чтобы выйти в главное меню нажмите 0   Чтобы продолжить, нажмите 1\n"); scanf("%d", &k0); printf("\n"); printf("\n");
 	} while (k0 == 1);

@@ -1,16 +1,19 @@
-#include<stdio.h>
+#include <iostream>
 #include<Windows.h>
 #include"Header_Combinatorica.h"
 #include "HeaderMatrices.h"
 #include "Header_Functions.h"
 #include "SDL.h"
 #include "Veroyatn.h"
+#include "header_polynom_main.h"
+using namespace std;
 
 int main(int argc, char**argv)
 {
 	
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
+
 	int again = 1, choose;
 	do
 	{
@@ -34,9 +37,9 @@ int main(int argc, char**argv)
 		{
 		case 1: Menu_Matrix(); break;
 		case 2: Menu_Combinatorica(); break;
-		//case 3: Menu_Polynomails(); break;
-		//case 4: 
-		
+		case 3: Menu_Polynomails(); break;
+		case 4: 
+			Menu_Veroiatnost(); break;
 		case 5:
 			Menu_Functions(); break;
 		case 0:

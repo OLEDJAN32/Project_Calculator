@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+using namespace std;
+
 void Menu_Veroiatnost();
 
 void Input_Veroiatnost(double& m, int& n);

@@ -1,7 +1,6 @@
 #include "Header_Functions.h"
 #include "HeaderSDL.h"
 
-
 void Menu_Functions() {
 	
 	//setlocale(LC_ALL, "rus");
