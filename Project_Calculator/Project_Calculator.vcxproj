@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Combinatorica.cpp" />
-    <ClCompile Include="Function.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Main_menu.cpp">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsCpp</CompileAs>

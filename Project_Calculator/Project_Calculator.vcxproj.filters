@@ -21,9 +21,6 @@
     <ClCompile Include="Combinatorica.cpp">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
-    <ClCompile Include="Function.cpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClCompile>
     <ClCompile Include="Matrices.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
