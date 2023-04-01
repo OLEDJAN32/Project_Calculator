@@ -26,6 +26,7 @@ int main(int argc, char**argv)
 		printf("4) Калькулятор вероятностей и математической статистики\n");
 		printf("5) Калькулятор для работы с функциями\n");
 		printf("6) Калькулятор обыкновенных дробей\n\n");
+		printf("Введите 0 для выхода\n\n");
 		printf("Использовать калькулятор под номером: "); scanf("%d", &choose);
 
 		while ((choose < 0) || (choose > 6))
@@ -45,15 +46,9 @@ int main(int argc, char**argv)
 		case 5:
 			Menu_Functions(); break;
 		case 6: Menu_Drobi(); break;
-		case 0:
-			again = 0;
+		case 0: again = 0;
 		}
-		
-		
-
-		
-		//printf("Выйти из программы?\n");
-		//printf("Чтобы выйти нажмите 0   Чтобы продолжить работу, нажмите 1\n"); scanf("%d", &again); printf("\n\n");
+				
 	} while (again == 1);
 	
 	return 0;
