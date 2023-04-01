@@ -2,6 +2,7 @@
 #include "HeaderSDL.h"
 #include "KorenY.h"
 #include "HeaderIntegral.h"
+#include "Extremumy.h"
 
 void Menu_Functions() {
 	int check; bool flag = true;
@@ -21,7 +22,7 @@ void Menu_Functions() {
 		case 3:
 			ChooseFunctionKoren(); break;
 		case 4:
-			//integral(); break;
+			Menu_Ekstremum(); break;
 		case 0:
 			flag = false; break;
 		default:
