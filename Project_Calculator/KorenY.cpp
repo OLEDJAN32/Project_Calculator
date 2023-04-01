@@ -1,11 +1,11 @@
 #include "KorenY.h"
-#define e 0.001
+#define e 0.00001
 
 double function1(double x, double a, double b, double c)
 {
 	return a * pow(x, b) + c;
 }
-double DihStepen(double a, double b, double c, int A, int B) {
+double DihStepen(double a, double b, double c, double A, double B) {
 	double C = (A + B) / 2.0;
 	if (function1(C, a, b, c) == 0 || (B - A) / 2 < e)
 		return C;
@@ -41,7 +41,7 @@ double function2(double x, double a, double b, double c,double d)
 {
 	return a * pow(b, x*c) + d;
 }
-double DihPokaz(double a, double b, double c, double d, int A, int B) {
+double DihPokaz(double a, double b, double c, double d, double A, double B) {
 	double C = (A + B) / 2.0;
 	if (function2(C, a, b, c,d) == 0 || (B - A) / 2 < e)
 		return C;
@@ -78,7 +78,7 @@ double function3(double x, double a, double b, double c)
 {
 	return a*log(b*x)+c;
 }
-double DihLog(double a, double b, double c, int A, int B) {
+double DihLog(double a, double b, double c,  double A, double B) {
 	double C = (A + B) / 2.0;
 	if (function3(C, a, b, c) == 0 || (B - A) / 2 < e)
 		return C;
@@ -114,7 +114,7 @@ double function4(double x, double a, double b, double c, double d)
 {
 	return a * sin(b * x + c) + d;
 }
-double DihSinus(double a, double b, double c, double d, int A, int B) {
+double DihSinus(double a, double b, double c, double d, double A, double B) {
 	double C = (A + B) / 2.0;
 	if (function4(C, a, b, c, d) == 0 || (B - A) / 2 < e)
 		return C;
@@ -151,7 +151,7 @@ double function5(double x, double a, double b, double c, double d)
 {
 	return a * cos(b * x + c) + d;
 }
-double DihCosinus(double a, double b, double c, double d, int A, int B) {
+double DihCosinus(double a, double b, double c, double d, double A, double B) {
 	double C = (A + B) / 2.0;
 	if (function5(C, a, b, c, d) == 0 || (B - A) / 2 < e)
 		return C;
