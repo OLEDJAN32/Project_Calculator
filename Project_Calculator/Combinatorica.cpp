@@ -56,7 +56,7 @@ void razm_no_povt()
 {
 	int n, m, A = 1;
 	int fact_n = 1, fact_n_m = 1;
-	printf("Введите число n (меньше 13 и больше нуля): "); scanf("%d", &n);
+	printf("Введите число n (меньше 13 и больше или равно нулю): "); scanf("%d", &n);
 	printf("Введите число m: "); scanf("%d", &m);
 
 	while (n < m || n < 0 || m < 0 || n>12 || m>12)
